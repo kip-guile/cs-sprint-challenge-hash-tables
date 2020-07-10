@@ -3,8 +3,20 @@ def intersection(arrays):
     YOUR CODE HERE
     """
     # Your code here
+    count = {}
+    dups = []
+    for array in arrays:
+        for item in array:
+            if item in count:
+                count[item] += 1
+            else:
+                count[item] = 1
 
-    return result
+    for item in count:
+        if count[item] == len(arrays):
+            dups.append(item)
+
+    return dups
 
 
 if __name__ == "__main__":
